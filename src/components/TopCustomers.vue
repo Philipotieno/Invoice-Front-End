@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
     <div class="drop_dwn">
-      <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
-        <b-dropdown-item to="/">Invoice Chart</b-dropdown-item>
-        <b-dropdown-item to="/invoice-table">Invoice Table</b-dropdown-item>
-        <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
+      <b-dropdown id="dropdown-offset" offset="255" text="More" class="m-2">
+        <b-dropdown-item to="/">View Top 5 Customers</b-dropdown-item>
+        <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
+        <b-dropdown-item to="/file-upload">Upload a csv file</b-dropdown-item>
       </b-dropdown>
     </div>
     <h3>Top Customers</h3>
@@ -16,15 +16,15 @@
             },
             className: 'highcharts-color-0',
             min: 0,
-            tickInterval: 2
+            tickInterval: 2000
           },
           plotOptions: {
             column: {
-              borderRadius: '10px'
+              borderRadius: '100px'
             }
           },
           styledMode: true,
-          colors: ['#405262']
+          colors: ['#f87979']
         }"
         :data="newArray"
         xtitle="Name"
@@ -58,6 +58,7 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+  color: blue
 }
 ul {
   list-style-type: none;

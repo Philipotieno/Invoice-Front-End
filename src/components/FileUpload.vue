@@ -2,9 +2,9 @@
   <div class="file-upload">
       <div class="drop_dwn">
       <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
-        <b-dropdown-item to="/">Invoice Chart</b-dropdown-item>
-        <b-dropdown-item to="/invoice-table">Invoice Table</b-dropdown-item>
-        <b-dropdown-item to="/top-customers">Top Customers</b-dropdown-item>
+        <b-dropdown-item to="/">Last 30 Transactions Chart</b-dropdown-item>
+        <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
+        <b-dropdown-item to="/top-customers">View Top 5 Customers</b-dropdown-item>
       </b-dropdown>
     </div>
     <h3>Upload File</h3>

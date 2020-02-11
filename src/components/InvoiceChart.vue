@@ -2,30 +2,31 @@
   <div class="container">
     <div class="drop_dwn">
       <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
-        <b-dropdown-item to="/invoice-table">Invoice Table</b-dropdown-item>
-        <b-dropdown-item to="/top-customers">Top Customers</b-dropdown-item>
-        <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
+        <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
+        <b-dropdown-item to="/top-customers">View Top 5 Customers</b-dropdown-item>
+        <b-dropdown-item to="/file-upload">Upload a csv file</b-dropdown-item>
       </b-dropdown>
     </div>
 
     <form class="center" id="dateForm" role="form" @submit.prevent="fetchData">
-      <h3>Invoice Range</h3>
+      <h3>Last 30 Transactions</h3>
       <Datepicker v-model="startDate" />
     </form>
     <line-chart
       :library="{
           yAxis: {
             labels: {
-              enabled: true
+              enabled: true,
+              backgroundColor: '#f87979',
             },
             min: 0,
-            tickInterval: 2
+            tickInterval: 10
           },
-          colors: ['#556573']
+          colors: ['#f87979']
         }"
       :data="formattedArray"
-      xtitle="Month"
-      ytitle="Total Amt."
+      xtitle="Number of transactions"
+      ytitle="Total Amount Due."
     />
   </div>
 </template>
@@ -97,6 +98,7 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+  color: blue;
 }
 ul {
   list-style-type: none;
