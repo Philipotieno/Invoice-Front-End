@@ -2,9 +2,9 @@
   <div class="hello">
     <div class="drop_dwn">
       <b-dropdown id="dropdown-1" text="More Options" class="m-md-2">
-        <b-dropdown-item to="/">View Top 5 Customers</b-dropdown-item>
+        <b-dropdown-item to="/last-transactions">View Top 5 Customers</b-dropdown-item>
         <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
-        <b-dropdown-item to="/file-upload">Upload a csv file</b-dropdown-item>
+        <b-dropdown-item to="/">Upload a csv file</b-dropdown-item>
       </b-dropdown>
     </div>
     <h3>Top Customers</h3>

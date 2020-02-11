@@ -1,8 +1,21 @@
 <template>
   <div class="file-upload">
+      <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Welcome to My Data Visualization Site</h1>
+      </v-flex>
+      <v-flex xs12 sm6 offset-sm3 mt-3>
+        <blockquote class="blockquote text-xs-center">
+          To visualize your data<br>
+          upload a csv file with the required headers
+        </blockquote>
+      </v-flex>
+    </v-layout>
+  </v-container>
       <div class="drop_dwn">
         <b-dropdown id="dropdown-1" size="sm" text="View More Options" class="m-md-2">
-          <b-dropdown-item to="/">Last 30 Transactions Chart</b-dropdown-item>
+          <b-dropdown-item to="/last-transactions">Last 30 Transactions Chart</b-dropdown-item>
           <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
           <b-dropdown-item to="/top-customers">View Top 5 Customers</b-dropdown-item>
         </b-dropdown>
@@ -64,6 +77,8 @@ export default {
 <style scoped>
 .file-upload {
   text-align: center;
+  margin-top: 10%;
+  align-items: center
 }
 h3 {
   margin: 40px 0 0;

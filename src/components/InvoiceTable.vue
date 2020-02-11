@@ -2,9 +2,9 @@
   <div class="invoice-table">
     <div class="drop_dwn">
       <b-dropdown id="dropdown-1" text="More Options" class="m-md-2">
-        <b-dropdown-item to="/">Last 30 Transactions Chart</b-dropdown-item>
+        <b-dropdown-item to="/last-transactions">Last 30 Transactions Chart</b-dropdown-item>
         <b-dropdown-item to="/top-customers">Top Customers</b-dropdown-item>
-        <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
+        <b-dropdown-item to="/">File Upload</b-dropdown-item>
       </b-dropdown>
     </div>
       <h3>Summary Of All transactions</h3>

@@ -4,8 +4,8 @@ import TopCustomers from './components/TopCustomers';
 import FileUpload from './components/FileUpload';
 
 export default [
-    { path: '/', component: InvoiceChart },
+    { path: '/last-transactions', component: InvoiceChart },
     { path: '/invoice-table', component: InvoiceTable },
     { path: '/top-customers', component: TopCustomers },
-    { path: '/file-upload', component: FileUpload }
+    { path: '/', component: FileUpload }
 ]
