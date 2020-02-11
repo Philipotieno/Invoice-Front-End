@@ -1,7 +1,7 @@
 <template>
   <div class="invoice-table">
     <div class="drop_dwn">
-      <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
+      <b-dropdown id="dropdown-1" text="More Options" class="m-md-2">
         <b-dropdown-item to="/">Last 30 Transactions Chart</b-dropdown-item>
         <b-dropdown-item to="/top-customers">Top Customers</b-dropdown-item>
         <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
@@ -50,6 +50,11 @@ export default {
 <style scoped>
 h3 {
   color: blue;
-  
+}
+
+.drop_dwn {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  margin-bottom: 10%
 }
 </style>

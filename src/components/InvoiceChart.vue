@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="drop_dwn">
-      <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
+      <b-dropdown id="dropdown-1" text="More Options" class="m-md-2">
         <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
         <b-dropdown-item to="/top-customers">View Top 5 Customers</b-dropdown-item>
         <b-dropdown-item to="/file-upload">Upload a csv file</b-dropdown-item>
@@ -103,6 +103,7 @@ h3 {
 ul {
   list-style-type: none;
   padding: 0;
+  background-color: black;
 }
 li {
   display: inline-block;
@@ -114,4 +115,12 @@ a {
 .range {
   margin: 0 auto;
 }
+
+.drop_dwn {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  margin-bottom: 10%
+}
+
+
 </style>

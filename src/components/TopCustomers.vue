@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="drop_dwn">
-      <b-dropdown id="dropdown-offset" offset="255" text="More" class="m-2">
+      <b-dropdown id="dropdown-1" text="More Options" class="m-md-2">
         <b-dropdown-item to="/">View Top 5 Customers</b-dropdown-item>
         <b-dropdown-item to="/invoice-table">Summary of transactions</b-dropdown-item>
         <b-dropdown-item to="/file-upload">Upload a csv file</b-dropdown-item>
@@ -60,6 +60,7 @@ h3 {
   margin: 40px 0 0;
   color: blue
 }
+
 ul {
   list-style-type: none;
   padding: 0;
