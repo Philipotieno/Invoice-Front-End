@@ -1,34 +1,24 @@
 <template>
   <div id="app">
-    <TopCustomers/>
-    <InvoiceTable/>
-    <InvoiceChart/>
-    <FileUpload/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-// import InvoiceChart from './components/InvoiceChart.vue'
-import TopCustomers from './components/TopCustomers'
-import InvoiceTable from './components/InvoiceTable'
-import InvoiceChart from './components/InvoiceChart'
-import FileUpload from './components/FileUpload'
-
 export default {
-  name: 'app',
-  components: {
-    InvoiceChart,
-    TopCustomers,
-    InvoiceTable,
-    FileUpload
-  },
-  
-}
+  name: "app"
+};
 </script>
 
 <style>
+input, button, select, optgroup, textarea {
+  border-radius: 8px;
+  border-color: #556573;
+  outline: none;
+  text-align: center
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

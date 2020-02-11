@@ -1,10 +1,16 @@
 <template>
-  <div class="hello">
-    <h3>Invoice Range</h3>
-    <form id="dateForm" role="form" @submit.prevent="fetchData">
-        <Datepicker
-        v-model="startDate"
-        />
+  <div class="container">
+    <div class="drop_dwn">
+      <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
+        <b-dropdown-item to="/invoice-table">Invoice Table</b-dropdown-item>
+        <b-dropdown-item to="/top-customers">Top Customers</b-dropdown-item>
+        <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
+      </b-dropdown>
+    </div>
+
+    <form class="center" id="dateForm" role="form" @submit.prevent="fetchData">
+      <h3>Invoice Range</h3>
+      <Datepicker v-model="startDate" />
     </form>
     <line-chart
       :library="{
@@ -25,25 +31,25 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker';
-import moment from 'moment'
-import lodash from 'lodash'
+import Datepicker from "vuejs-datepicker";
+import moment from "moment";
+import lodash from "lodash";
 export default {
   name: "InvoiceChart",
-  components:{
+  components: {
     Datepicker
   },
-  data(){
+  data() {
     return {
-      startDate:''
-    }
+      startDate: ""
+    };
   },
   props: {},
   computed: {
     postInvoices() {
       return this.$store.getters.postInvoices;
     },
-     formattedArray() {
+    formattedArray() {
       let postInvoices = this.postInvoices;
       return lodash.reduce(
         postInvoices,
@@ -53,30 +59,34 @@ export default {
         },
         {}
       );
-    },
+    }
   },
-  watch:{
+  watch: {
     startDate(date) {
-      let start = new moment(date).startOf('day');
+      let start = new moment(date).startOf("day");
       this.startDate = new Date(start).toISOString();
       this.fetchData();
-    },
+    }
   },
   mounted() {
+    //on mounted, date will be today's date
+    this.startDate = moment(new Date()).format(moment.HTML5_FMT.DATE);
+    //fetch data with today's date
     let startDate = moment(new Date()).format(moment.HTML5_FMT.DATE);
-      let payload = {
-        date: startDate
-      }
+    let payload = {
+      date: startDate
+    };
     this.$store.dispatch("postInvoiceDate", payload);
-  }, 
-  methods:{
-    fetchData(){
+  },
+  methods: {
+    fetchData() {
+      //on input of a new date, v-model changes
       let startDate = moment(this.startDate).format(moment.HTML5_FMT.DATE);
       let payload = {
         date: startDate
-      }
-      if (startDate){
-        this.$store.dispatch('postInvoiceDate', payload);
+      };
+      if (startDate) {
+        this.$store.dispatch("postInvoiceDate", payload);
       }
     }
   }
@@ -98,5 +108,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.range {
+  margin: 0 auto;
 }
 </style>

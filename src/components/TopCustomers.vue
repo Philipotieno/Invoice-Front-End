@@ -1,5 +1,12 @@
 <template>
   <div class="hello">
+    <div class="drop_dwn">
+      <b-dropdown id="dropdown-offset" offset="25" text="More" class="m-2">
+        <b-dropdown-item to="/">Invoice Chart</b-dropdown-item>
+        <b-dropdown-item to="/invoice-table">Invoice Table</b-dropdown-item>
+        <b-dropdown-item to="/file-upload">File Upload</b-dropdown-item>
+      </b-dropdown>
+    </div>
     <h3>Top Customers</h3>
       <bar-chart
         :library="{
