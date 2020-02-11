@@ -13,6 +13,13 @@
       </v-flex>
     </v-layout>
   </v-container>
+    <h3>To get started upload a file</h3>
+    <div class="upload">
+        <input accept=".csv" type="file" id="file" ref="userFile" v-on:change="handleFileUpload()" /><br>
+        <b-button variant="primary" v-on:click="submitFile()">Submit</b-button>
+        <div v-if="uploadInvoice && uploadInvoice.success">{{uploadInvoice.success}}</div>
+        <div v-else>File Not Uploaded</div>
+    </div>
       <div class="drop_dwn">
         <b-dropdown id="dropdown-1" size="sm" text="View More Options" class="m-md-2">
           <b-dropdown-item to="/last-transactions">Last 30 Transactions Chart</b-dropdown-item>
@@ -20,20 +27,6 @@
           <b-dropdown-item to="/top-customers">View Top 5 Customers</b-dropdown-item>
         </b-dropdown>
       </div>
-    <h3>Upload File</h3>
-    <div class="large-12 medium-12 small-12 cell">
-      <label>
-        File
-        <input accept=".csv" type="file" id="file" ref="userFile" v-on:change="handleFileUpload()" />
-      </label>
-      <b-button variant="primary" v-on:click="submitFile()">Submit</b-button>
-    </div>
-    <div v-if="uploadInvoice && uploadInvoice.success">
-      {{uploadInvoice.success}}
-    </div>
-    <div v-else>
-      File Not Uploaded
-    </div>
   </div>
 </template>
 
@@ -80,12 +73,28 @@ export default {
   margin-top: 10%;
   align-items: center
 }
+.upload {
+  display: center;
+}
 h3 {
   margin: 40px 0 0;
-  color: blue
+  color: blue;
+  font-size: 30px;
 }
 .drop_dwn {
  margin-bottom: 10%
 }
+input {
+   background-color: rgb(177, 224, 172);
+   color: rgb(0, 0, 0);
+   border-radius: 0%;
+   margin-top: 1%;
+}
 
+button {
+   background-color: rgb(2, 5, 158);
+   border-radius: 4%;
+   width: 10%;
+   margin-top: 1%;
+}
 </style>
