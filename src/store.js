@@ -11,7 +11,8 @@ export default new vuex.Store({
     state: {
         topCustomerList: [],
         invoiceSummary: [],
-        postInvoices: []
+        postInvoices: [],
+        uploadInvoice: undefined
     },
     getters: {
         topCustomerList: state => {
@@ -22,6 +23,9 @@ export default new vuex.Store({
         },
         postInvoices: state => {
             return state.postInvoices;
+        },
+        uploadInvoice: state => {
+            return state.uploadInvoice;
         }
     },
     mutations: {
@@ -33,6 +37,9 @@ export default new vuex.Store({
         },
         POST_INVOICES(state, invoices) {
             state.postInvoices = invoices
+        },
+        UPLOAD_INVOICE(state, invoice) {
+            state.uploadInvoice = invoice
         }
 
     },
@@ -62,13 +69,30 @@ export default new vuex.Store({
                 })
         },
         postInvoiceDate({ commit }, params) {
-            console.log('params',params);
+            console.log('params', params);
             axios
-                .post('https://philip-invoice.herokuapp.com/invoices/transactions',params)
+                .post('https://philip-invoice.herokuapp.com/invoices/transactions', params)
                 .then(data => {
                     console.log("post", data.data.invoices);
                     let invoices = data.data.invoices;
                     commit('POST_INVOICES', invoices);
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        uploadInvoice({ commit }, params) {
+            console.log('params', params);
+            axios
+                .post('https://philip-invoice.herokuapp.com/invoices', params)
+                .then(data => {
+                    console.log("uploadres", data);
+                    if(data.data.invoice && data.data.success){
+                        let invoice = data.data;
+                        commit('UPLOAD_INVOICE', invoice);
+                    } else {
+                        console.log('error')
+                    }
                 })
                 .catch(error => {
                     console.log(error)
