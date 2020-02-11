@@ -1,24 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Mitchells vue app"/>
+    <TopCustomers/>
+    <InvoiceTable/>
+    <InvoiceChart/>
+    <FileUpload/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import InvoiceChart from './components/InvoiceChart.vue'
+import TopCustomers from './components/TopCustomers'
+import InvoiceTable from './components/InvoiceTable'
+import InvoiceChart from './components/InvoiceChart'
+import FileUpload from './components/FileUpload'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
-  }
+    InvoiceChart,
+    TopCustomers,
+    InvoiceTable,
+    FileUpload
+  },
+  
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
