@@ -1,18 +1,10 @@
 <template>
   <div class="file-upload">
-      <v-container fluid>
-    <v-layout row wrap>
-      <v-flex xs12 class="text-xs-center" mt-5>
-        <h1>Welcome to My Data Visualization Site</h1>
-      </v-flex>
-      <v-flex xs12 sm6 offset-sm3 mt-3>
-        <blockquote class="blockquote text-xs-center">
+    <h1>Welcome to My Data Visualization Site</h1>
+    <blockquote class="blockquote text-xs-center">
           To visualize your data<br>
           upload a csv file with the required headers
-        </blockquote>
-      </v-flex>
-    </v-layout>
-  </v-container>
+    </blockquote>
     <h3>To get started upload a file</h3>
     <div class="upload">
         <input accept=".csv" type="file" id="file" ref="userFile" v-on:change="handleFileUpload()" /><br>
@@ -97,4 +89,16 @@ button {
    width: 10%;
    margin-top: 1%;
 }
+
+@media only screen and (max-width: 800px) {
+  .upload {
+    border: none;
+    border-bottom: #f2f2f2 solid 0.15rem;
+    height: 100rem;
+    position: relative;
+    width: 100%;
+    padding: 0px 15px;
+   }
+}
+
 </style>
