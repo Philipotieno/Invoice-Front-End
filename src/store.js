@@ -78,7 +78,10 @@ export default new vuex.Store({
                     commit('POST_INVOICES', invoices);
                 })
                 .catch(error => {
-                    console.log(error)
+                    switch (error.response.status) {
+                        case 404:
+                            alert('No transaction before that period')
+                      }
                 })
         },
         uploadInvoice({ commit }, params) {
@@ -86,7 +89,7 @@ export default new vuex.Store({
             axios
                 .post('https://philip-invoice.herokuapp.com/invoices', params)
                 .then(data => {
-                    console.log("uploadres", data);
+                    console.log("uploades", data);
                     if(data.data.invoice && data.data.success){
                         let invoice = data.data;
                         commit('UPLOAD_INVOICE', invoice);
