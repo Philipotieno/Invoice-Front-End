@@ -16,11 +16,11 @@
             },
             className: 'highcharts-color-0',
             min: 0,
-            tickInterval: 2000
+            tickInterval: 500
           },
           plotOptions: {
             column: {
-              borderRadius: '100px'
+              borderRadius: '10px'
             }
           },
           styledMode: true,
