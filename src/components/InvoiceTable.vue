@@ -53,8 +53,6 @@ h3 {
 }
 
 .drop_dwn {
-  font-size: 0.8rem;
-  margin-bottom: 0.75rem;
-  margin-bottom: 10%
+  margin-bottom: 6%;
 }
 </style>

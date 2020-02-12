@@ -20,7 +20,7 @@
               backgroundColor: '#f87979',
             },
             min: 0,
-            tickInterval: 10
+            tickInterval: 1000
           },
           colors: ['#f87979']
         }"
